@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập & Đăng Ký</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #f0f0f0;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: none;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background-color: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .tab:hover {
+            background-color: #e8e8e8;
+        }
+
+        .form-wrapper {
+            padding: 40px;
+            display: none;
+        }
+
+        .form-wrapper.active {
+            display: block;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .message {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .logged-in {
+            display: none;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logged-in.active {
+            display: block;
+        }
+
+        .logged-in h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .otp-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .otp-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.1);
+        }
+
+        .otp-timer {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .resend-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            color: #667eea;
+            border: 1px solid #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .resend-btn:hover:not(:disabled) {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .resend-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('login')">Đăng Nhập</button>
+            <button class="tab" onclick="switchTab('register')">Đăng Ký</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-wrapper active" id="login-form">
+            <h2>Đăng Nhập</h2>
+            <div id="login-message" class="message"></div>
+            <form id="login-form-el">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit">Đăng Nhập</button>
+            </form>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <div class="form-wrapper" id="otp-form">
+            <h2>Xác Thực OTP</h2>
+            <div id="otp-message" class="message"></div>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                Mã OTP đã được gửi đến email của bạn
+            </p>
+            <form id="otp-form-el">
+                <div class="form-group">
+                    <label>Nhập mã OTP (6 chữ số)</label>
+                    <input type="text" id="otp-input" name="otp" maxlength="6" placeholder="000000" required pattern="[0-9]{6}">
+                </div>
+                <div class="otp-timer" id="otp-timer"></div>
+                <button type="submit">Xác Thực</button>
+                <button type="button" class="resend-btn" id="resend-btn" onclick="resendOTP()" disabled>
+                    Gửi lại OTP
+                </button>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-wrapper" id="register-form">
+            <h2>Đăng Ký</h2>
+            <div id="register-message" class="message"></div>
+            <form id="register-form-el">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận mật khẩu</label>
+                    <input type="password" name="confirmPassword" required>
+                </div>
+                <button type="submit">Đăng Ký</button>
+            </form>
+        </div>
+
+        <!-- Logged In -->
+        <div class="logged-in" id="logged-in">
+            <h2>Chào mừng</h2>
+            <div class="user-info">
+                <p>Bạn đã đăng nhập thành công</p>
+                <p>Tên người dùng: <strong id="display-username"></strong></p>
+            </div>
+            <button onclick="logout()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Đăng Xuất</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', checkSession);
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.form-wrapper').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.message').forEach(m => {
+                m.classList.remove('success', 'error');
+                m.textContent = '';
+            });
+
+            if (tab === 'login') {
+                document.querySelectorAll('.tab')[0].classList.add('active');
+                document.getElementById('login-form').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab')[1].classList.add('active');
+                document.getElementById('register-form').classList.add('active');
+            }
+        }
+
+        function checkSession() {
+            fetch('/api/user')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.userId) {
+                        showLoggedIn(data.username);
+                    }
+                })
+                .catch(() => {});
+        }
+
+        document.getElementById('login-form-el').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = {
+                username: formData.get('username'),
+                password: formData.get('password')
+            };
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
+                const msgEl = document.getElementById('login-message');
+
+                if (res.ok) {
+                    msgEl.textContent = result.message;
+                    msgEl.classList.add('success');
+                    msgEl.classList.remove('error');
+                    // Store userId for OTP verification
+                    window.currentUserId = result.userId;
+                    setTimeout(() => showOTPForm(), 1500);
+                } else {
+                    msgEl.textContent = result.error;
+                    msgEl.classList.add('error');
+                    msgEl.classList.remove('success');
+                }
+            } catch (err) {
+                document.getElementById('login-message').textContent = 'Lỗi kết nối';
+                document.getElementById('login-message').classList.add('error');
+            }
+        });
+
+        // OTP Form Handler
+        let otpCountdown = 0;
+        let otpTimerId = null;
+
+        function showOTPForm() {
+            document.querySelectorAll('.form-wrapper').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('otp-form').classList.add('active');
+            document.getElementById('otp-input').focus();
+            startOTPCountdown();
+        }
+
+        function startOTPCountdown() {
+            otpCountdown = 300; // 5 minutes
+            updateOTPTimer();
+            otpTimerId = setInterval(updateOTPTimer, 1000);
+        }
+
+        function updateOTPTimer() {
+            const minutes = Math.floor(otpCountdown / 60);
+            const seconds = otpCountdown % 60;
+            document.getElementById('otp-timer').textContent = 
+                `Hết hạn trong: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (otpCountdown <= 0) {
+                clearInterval(otpTimerId);
+                document.getElementById('otp-timer').textContent = 'OTP đã hết hạn';
+                document.getElementById('otp-form-el').style.display = 'none';
+            } else if (otpCountdown <= 60) {
+                document.getElementById('otp-timer').style.color = '#e74c3c';
+            }
+            otpCountdown--;
+        }
+
+        function resendOTP() {
+            // In real scenario, this would call an API to resend OTP
+            alert('OTP mới đã được gửi đến email của bạn');
+            startOTPCountdown();
+            document.getElementById('otp-input').value = '';
+        }
+
+        document.getElementById('otp-form-el').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const otp = document.getElementById('otp-input').value;
+            const userId = window.currentUserId;
+
+            try {
+                const res = await fetch('/api/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId, otp })
+                });
+                const result = await res.json();
+                const msgEl = document.getElementById('otp-message');
+
+                if (res.ok) {
+                    msgEl.textContent = result.message;
+                    msgEl.classList.add('success');
+                    msgEl.classList.remove('error');
+                    clearInterval(otpTimerId);
+                    setTimeout(() => checkSession(), 1000);
+                } else {
+                    msgEl.textContent = result.error;
+                    msgEl.classList.add('error');
+                    msgEl.classList.remove('success');
+                }
+            } catch (err) {
+                document.getElementById('otp-message').textContent = 'Lỗi kết nối';
+                document.getElementById('otp-message').classList.add('error');
+            }
+        });
+
+        document.getElementById('register-form-el').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = {
+                username: formData.get('username'),
+                email: formData.get('email'),
+                password: formData.get('password'),
+                confirmPassword: formData.get('confirmPassword')
+            };
+
+            try {
+                const res = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
+                const msgEl = document.getElementById('register-message');
+
+                if (res.ok) {
+                    msgEl.textContent = result.message;
+                    msgEl.classList.add('success');
+                    msgEl.classList.remove('error');
+                    setTimeout(() => showLoggedIn(data.username), 1000);
+                } else {
+                    msgEl.textContent = result.error;
+                    msgEl.classList.add('error');
+                    msgEl.classList.remove('success');
+                }
+            } catch (err) {
+                document.getElementById('register-message').textContent = 'Lỗi kết nối';
+                document.getElementById('register-message').classList.add('error');
+            }
+        });
+
+        function showLoggedIn(username) {
+            document.querySelectorAll('.form-wrapper').forEach(f => f.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('logged-in').classList.add('active');
+            document.getElementById('display-username').textContent = username;
+        }
+
+        function logout() {
+            fetch('/api/logout', { method: 'POST' })
+                .then(() => {
+                    document.getElementById('logged-in').classList.remove('active');
+                    switchTab('login');
+                    document.getElementById('login-form-el').reset();
+                    document.getElementById('register-form-el').reset();
+                })
+                .catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>

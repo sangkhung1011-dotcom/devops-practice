@@ -1,0 +1,143 @@
+name: 🐳 Build & Push Docker Image
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'app/**'
+      - 'Dockerfile'
+      - 'package.json'
+      - '.github/workflows/ci-cd.yml'
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:  # Cho phép trigger thủ công
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: login-app
+
+jobs:
+  # ========== BUILD DOCKER IMAGE ==========
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      packages: write
+    
+    outputs:
+      image-digest: ${{ steps.docker_build.outputs.digest }}
+      image-tags: ${{ steps.meta.outputs.tags }}
+    
+    steps:
+      # Step 1: Checkout code
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      # Step 2: Get commit info
+      - name: 📝 Get commit info
+        id: commit
+        run: |
+          echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+      
+      # Step 3: Setup Docker Buildx
+      - name: 🔧 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      # Step 4: Docker metadata (tags & labels)
+      - name: 🏷️ Docker metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix=${{ steps.commit.outputs.branch }}-
+            type=raw,value=latest,enable={{is_default_branch}}
+      
+      # Step 5: Login to Docker Hub
+      - name: 🔐 Login to Docker Hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      # Step 6: Build Docker image
+      - name: 🏗️ Build Docker image
+        id: docker_build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          build-args: |
+            BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+            VCS_REF=${{ steps.commit.outputs.short_sha }}
+      
+      # Step 7: Display push result
+      - name: 📊 Image info
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "✅ Image built successfully"
+          echo "📦 Tags: ${{ steps.meta.outputs.tags }}"
+          echo "🏷️ Labels: ${{ steps.meta.outputs.labels }}"
+          echo "🔗 Image digest: ${{ steps.docker_build.outputs.digest }}"
+      
+      # Step 8: Slack notification
+      - name: 📢 Notify Slack on success
+        if: success() && github.event_name != 'pull_request'
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: |
+            ✅ Docker image pushed successfully!
+            Image: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}
+            Tags: ${{ steps.meta.outputs.tags }}
+            Commit: ${{ steps.commit.outputs.short_sha }}
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        continue-on-error: true
+      
+      # Step 9: Slack notification on failure
+      - name: 📢 Notify Slack on failure
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: |
+            ❌ Docker image build failed!
+            Commit: ${{ steps.commit.outputs.short_sha }}
+            Branch: ${{ steps.commit.outputs.branch }}
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        continue-on-error: true
+
+  # ========== IMAGE SCANNING (Security) ==========
+  scan-image:
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 🔍 Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+      
+      - name: 📤 Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif'
+        continue-on-error: true
