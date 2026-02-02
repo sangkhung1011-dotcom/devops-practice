@@ -1,0 +1,146 @@
+[2026-02-02 04:45:03Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:45:03Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2026-02-02 04:45:03Z INFO Listener] RuntimeInformation: Ubuntu 24.04.3 LTS.
+[2026-02-02 04:45:03Z INFO Listener] Version: 2.331.0
+[2026-02-02 04:45:03Z INFO Listener] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-02 04:45:03Z INFO Listener] Culture: en-US
+[2026-02-02 04:45:03Z INFO Listener] UI Culture: en-US
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO Listener] Validating directory permissions for: '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO CommandLineParser] Parse
+[2026-02-02 04:45:03Z INFO CommandLineParser] Parsing 1 args
+[2026-02-02 04:45:03Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:45:03Z INFO CommandLineParser] HasArgs: False
+[2026-02-02 04:45:03Z INFO CommandLineParser] Adding Command: run
+[2026-02-02 04:45:03Z INFO Listener] Arguments parsed
+[2026-02-02 04:45:03Z INFO Runner] ExecuteCommand
+[2026-02-02 04:45:03Z INFO ConfigurationStore] currentAssemblyLocation: /home/ubuntu/devops-practice/bin/Runner.Listener.dll
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] binPath: /home/ubuntu/devops-practice/bin
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] RootFolder: /home/ubuntu/devops-practice
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] ConfigFilePath: /home/ubuntu/devops-practice/.runner
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'MigratedRunner': '/home/ubuntu/devops-practice/.runner_migrated'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] MigratedConfigFilePath: /home/ubuntu/devops-practice/.runner_migrated
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] CredFilePath: /home/ubuntu/devops-practice/.credentials
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ubuntu/devops-practice/.credentials_migrated'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] MigratedCredFilePath: /home/ubuntu/devops-practice/.credentials_migrated
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'Service': '/home/ubuntu/devops-practice/.service'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ubuntu/devops-practice/.service
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'help': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'version': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'check': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Command 'configure': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Command 'remove': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-02-02 04:45:03Z INFO ConfigurationManager] LoadSettings
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsConfigured()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-02 04:45:03Z INFO ConfigurationManager] Is configured: True
+[2026-02-02 04:45:03Z INFO ConfigurationStore] Read setting file: 391 chars
+[2026-02-02 04:45:03Z INFO ConfigurationManager] Settings Loaded
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-02-02 04:45:03Z INFO CommandSettings] Command 'run': 'True'
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsConfigured()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-02 04:45:03Z INFO ConfigurationManager] Is configured: True
+[2026-02-02 04:45:03Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-02-02 04:45:03Z INFO Runner] Set runner startup type - Manual
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'once': 'False'
+[2026-02-02 04:45:03Z INFO CommandSettings] Flag 'once': 'False'
+[2026-02-02 04:45:03Z INFO Runner] RunAsync
+[2026-02-02 04:45:03Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-02-02 04:45:03Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-02-02 04:45:03Z INFO Runner] Falling back to original .runner settings
+[2026-02-02 04:45:03Z INFO Runner] Using BrokerMessageListener
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] Using provided settings
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] {
+  "AgentId": 22,
+  "AgentName": "y",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/Gk9iXAxsZivv0rFjvuJ1oPomzqh9gGPoX8hOLpQ5Y9oTzAXF9J/",
+  "GitHubUrl": "https://github.com/sangkhung1011-dotcom/devops-practice",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] Loading Credentials
+[2026-02-02 04:45:03Z INFO ConfigurationStore] HasCredentials()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] stored True
+[2026-02-02 04:45:03Z INFO CredentialManager] GetCredentialProvider
+[2026-02-02 04:45:03Z INFO CredentialManager] Creating type OAuth
+[2026-02-02 04:45:03Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:45:03Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:45:03Z INFO HostContext] Well known config file 'RSACredentials': '/home/ubuntu/devops-practice/.credentials_rsaparams'
+[2026-02-02 04:45:03Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] Attempt to create session.
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-02-02 04:45:03Z INFO ConfigurationStore] HasCredentials()
+[2026-02-02 04:45:03Z INFO ConfigurationStore] stored True
+[2026-02-02 04:45:03Z INFO CredentialManager] GetCredentialProvider
+[2026-02-02 04:45:03Z INFO CredentialManager] Creating type OAuth
+[2026-02-02 04:45:03Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-02 04:45:03Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] VssConnection created
+[2026-02-02 04:45:03Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-02-02 04:45:03Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:45:03Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-02-02 04:45:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:45:03Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:45:03Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-02 04:45:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:45:03Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:45:03Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-02 04:45:03Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:45:05Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:45:05Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:45:05Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:45:05Z INFO BrokerMessageListener] VssConnection created
+[2026-02-02 04:45:05Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:45:05Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:45:05Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:45:05Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:45:06Z ERR  GitHubActionsService] POST request to https://tokenghub.actions.githubusercontent.com/_apis/oauth2/token/bbd38d23-c8f4-4c8c-97ba-655a0423bfab failed. HTTP Status: BadRequest
+[2026-02-02 04:45:06Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-02-02 04:45:06Z ERR  BrokerMessageListener] Catch exception during create session.
+[2026-02-02 04:45:06Z ERR  BrokerMessageListener] GitHub.Services.OAuth.VssOAuthTokenRequestException: Registration was not found or is not medium trust. ClientType: 
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.CreateSessionAsync(TaskAgentSession session, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.BrokerMessageListener.CreateSessionAsync(CancellationToken token)
+[2026-02-02 04:45:06Z ERR  Terminal] WRITE ERROR: Failed to create a session. The runner registration has been deleted from the server, please re-configure. Runner registrations are automatically deleted for runners that have not connected to the service recently.
+[2026-02-02 04:45:06Z INFO Listener] Runner execution has finished with return code 1

@@ -1,0 +1,89 @@
+[2026-02-02 04:44:39Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:44:39Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2026-02-02 04:44:39Z INFO Listener] RuntimeInformation: Ubuntu 24.04.3 LTS.
+[2026-02-02 04:44:39Z INFO Listener] Version: 2.331.0
+[2026-02-02 04:44:39Z INFO Listener] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-02 04:44:39Z INFO Listener] Culture: en-US
+[2026-02-02 04:44:39Z INFO Listener] UI Culture: en-US
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO Listener] Validating directory permissions for: '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO CommandLineParser] Parse
+[2026-02-02 04:44:39Z INFO CommandLineParser] Parsing 5 args
+[2026-02-02 04:44:39Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:44:39Z INFO CommandLineParser] HasArgs: False
+[2026-02-02 04:44:39Z INFO CommandLineParser] Adding Command: configure
+[2026-02-02 04:44:39Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:44:39Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:44:39Z INFO CommandLineParser] arg: url
+[2026-02-02 04:44:39Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:44:39Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:44:39Z INFO CommandLineParser] Adding option 'url': 'https://github.com/sangkhung1011-dotcom/devops-practice'
+[2026-02-02 04:44:39Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:44:39Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:44:39Z INFO CommandLineParser] arg: token
+[2026-02-02 04:44:39Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:44:39Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:44:39Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-02-02 04:44:39Z INFO Listener] Arguments parsed
+[2026-02-02 04:44:39Z INFO Runner] ExecuteCommand
+[2026-02-02 04:44:39Z INFO ConfigurationStore] currentAssemblyLocation: /home/ubuntu/devops-practice/bin/Runner.Listener.dll
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] binPath: /home/ubuntu/devops-practice/bin
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] RootFolder: /home/ubuntu/devops-practice
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] ConfigFilePath: /home/ubuntu/devops-practice/.runner
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'MigratedRunner': '/home/ubuntu/devops-practice/.runner_migrated'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] MigratedConfigFilePath: /home/ubuntu/devops-practice/.runner_migrated
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] CredFilePath: /home/ubuntu/devops-practice/.credentials
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ubuntu/devops-practice/.credentials_migrated'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] MigratedCredFilePath: /home/ubuntu/devops-practice/.credentials_migrated
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:44:39Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:44:39Z INFO HostContext] Well known config file 'Service': '/home/ubuntu/devops-practice/.service'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ubuntu/devops-practice/.service
+[2026-02-02 04:44:39Z INFO CommandSettings] Flag 'help': 'False'
+[2026-02-02 04:44:39Z INFO CommandSettings] Flag 'version': 'False'
+[2026-02-02 04:44:39Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-02-02 04:44:39Z INFO CommandSettings] Flag 'check': 'False'
+[2026-02-02 04:44:39Z INFO CommandSettings] Command 'configure': 'True'
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE: |                       
+[2026-02-02 04:44:39Z INFO Terminal] WRITE: Self-hosted runner registration
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE:                         |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-02-02 04:44:39Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-02-02 04:44:39Z INFO ConfigurationManager] ConfigureAsync
+[2026-02-02 04:44:39Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2026-02-02 04:44:39Z INFO ConfigurationStore] IsConfigured()
+[2026-02-02 04:44:39Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-02 04:44:39Z INFO ConfigurationManager] Is configured: True
+[2026-02-02 04:44:39Z ERR  Runner] System.InvalidOperationException: Cannot configure the runner because it is already configured. To reconfigure the runner, run 'config.cmd remove' or './config.sh remove' first.
+   at GitHub.Runner.Listener.Configuration.ConfigurationManager.ConfigureAsync(CommandSettings command)
+   at GitHub.Runner.Listener.Runner.ExecuteCommand(CommandSettings command)
+[2026-02-02 04:44:39Z ERR  Terminal] WRITE ERROR: Cannot configure the runner because it is already configured. To reconfigure the runner, run 'config.cmd remove' or './config.sh remove' first.
+[2026-02-02 04:44:39Z INFO Listener] Runner execution has finished with return code 1

@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 23,
+  "agentName": "sever",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/Gk9iXAxsZivv0rFjvuJ1oPomzqh9gGPoX8hOLpQ5Y9oTzAXF9J/",
+  "gitHubUrl": "https://github.com/sangkhung1011-dotcom/devops-practice",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

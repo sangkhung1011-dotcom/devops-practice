@@ -1,1 +1,13 @@
 db-data/
+node_modules/
+db-data/
+actions-runner/
+*.tar.gz
+actions-runner/
+externals/
+*.tar.gz
+actions-runner/
+*.tar.gz
+actions-runner/
+*.tar.gz
+externals/

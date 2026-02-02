@@ -1,0 +1,384 @@
+[2026-02-02 04:17:43Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:17:43Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2026-02-02 04:17:43Z INFO Listener] RuntimeInformation: Ubuntu 24.04.3 LTS.
+[2026-02-02 04:17:43Z INFO Listener] Version: 2.331.0
+[2026-02-02 04:17:43Z INFO Listener] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-02 04:17:43Z INFO Listener] Culture: en-US
+[2026-02-02 04:17:43Z INFO Listener] UI Culture: en-US
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO Listener] Validating directory permissions for: '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO CommandLineParser] Parse
+[2026-02-02 04:17:43Z INFO CommandLineParser] Parsing 5 args
+[2026-02-02 04:17:43Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:17:43Z INFO CommandLineParser] HasArgs: False
+[2026-02-02 04:17:43Z INFO CommandLineParser] Adding Command: configure
+[2026-02-02 04:17:43Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:17:43Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:17:43Z INFO CommandLineParser] arg: url
+[2026-02-02 04:17:43Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:17:43Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:17:43Z INFO CommandLineParser] Adding option 'url': 'https://github.com/sangkhung1011-dotcom/devops-practice'
+[2026-02-02 04:17:43Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:17:43Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:17:43Z INFO CommandLineParser] arg: token
+[2026-02-02 04:17:43Z INFO CommandLineParser] parsing argument
+[2026-02-02 04:17:43Z INFO CommandLineParser] HasArgs: True
+[2026-02-02 04:17:43Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-02-02 04:17:43Z INFO Listener] Arguments parsed
+[2026-02-02 04:17:43Z INFO Runner] ExecuteCommand
+[2026-02-02 04:17:43Z INFO ConfigurationStore] currentAssemblyLocation: /home/ubuntu/devops-practice/bin/Runner.Listener.dll
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] binPath: /home/ubuntu/devops-practice/bin
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] RootFolder: /home/ubuntu/devops-practice
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] ConfigFilePath: /home/ubuntu/devops-practice/.runner
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'MigratedRunner': '/home/ubuntu/devops-practice/.runner_migrated'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] MigratedConfigFilePath: /home/ubuntu/devops-practice/.runner_migrated
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] CredFilePath: /home/ubuntu/devops-practice/.credentials
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ubuntu/devops-practice/.credentials_migrated'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] MigratedCredFilePath: /home/ubuntu/devops-practice/.credentials_migrated
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:43Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:43Z INFO HostContext] Well known config file 'Service': '/home/ubuntu/devops-practice/.service'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ubuntu/devops-practice/.service
+[2026-02-02 04:17:43Z INFO CommandSettings] Flag 'help': 'False'
+[2026-02-02 04:17:43Z INFO CommandSettings] Flag 'version': 'False'
+[2026-02-02 04:17:43Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-02-02 04:17:43Z INFO CommandSettings] Flag 'check': 'False'
+[2026-02-02 04:17:43Z INFO CommandSettings] Command 'configure': 'True'
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE: |                       
+[2026-02-02 04:17:43Z INFO Terminal] WRITE: Self-hosted runner registration
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE:                         |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-02-02 04:17:43Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-02-02 04:17:43Z INFO ConfigurationManager] ConfigureAsync
+[2026-02-02 04:17:43Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2026-02-02 04:17:43Z INFO ConfigurationStore] IsConfigured()
+[2026-02-02 04:17:43Z INFO ConfigurationStore] IsConfigured: False
+[2026-02-02 04:17:43Z INFO ConfigurationManager] Is configured: False
+[2026-02-02 04:17:43Z INFO CommandSettings] Arg 'url': 'https://github.com/sangkhung1011-dotcom/devops-practice'
+[2026-02-02 04:17:43Z INFO CommandSettings] Remove url from Arg dictionary.
+[2026-02-02 04:17:43Z INFO CommandSettings] Arg 'token': '***'
+[2026-02-02 04:17:43Z INFO CommandSettings] Remove token from Arg dictionary.
+[2026-02-02 04:17:45Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (427A:159789:3D517D:472EC5:69802567)
+[2026-02-02 04:17:45Z INFO ConfigurationManager] Using runner-admin flow: False
+[2026-02-02 04:17:45Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2026-02-02 04:17:45Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:17:45Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-02-02 04:17:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:17:45Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:17:45Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-02 04:17:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:17:45Z INFO RunnerServer] EstablishVssConnection
+[2026-02-02 04:17:45Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-02 04:17:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-02 04:17:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:17:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:17:47Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-02 04:17:47Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:17:47Z INFO ConfigurationManager] Test Connection complete.
+[2026-02-02 04:17:47Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:47Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:47Z INFO HostContext] Well known config file 'RSACredentials': '/home/ubuntu/devops-practice/.credentials_rsaparams'
+[2026-02-02 04:17:47Z INFO RSAFileKeyManager] Creating new RSA key using 2048-bit key length
+[2026-02-02 04:17:47Z INFO RSAFileKeyManager] Successfully saved RSA key parameters to file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:17:47Z INFO RSAFileKeyManager] Which2: 'chmod'
+[2026-02-02 04:17:47Z INFO RSAFileKeyManager] Location: '/usr/bin/chmod'
+[2026-02-02 04:17:47Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:17:47Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper] Starting process:
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/chmod'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Arguments: '600 /home/ubuntu/devops-practice/.credentials_rsaparams'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Working directory: '/home/ubuntu/devops-practice'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper] Process started with process id 31137, waiting for process exit.
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:17:47Z INFO ProcessInvokerWrapper] Finished process 31137 with exit code 0, and elapsed time 00:00:00.0050138.
+[2026-02-02 04:17:47Z INFO RSAFileKeyManager] Successfully set permissions for RSA key parameters file /home/ubuntu/devops-practice/.credentials_rsaparams
+[2026-02-02 04:17:48Z INFO CommandSettings] Arg 'runnergroup': ''
+[2026-02-02 04:17:48Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:17:48Z INFO PromptManager] ReadValue
+[2026-02-02 04:17:48Z INFO Terminal] WRITE: Enter the name of the runner group to add this runner to: 
+[2026-02-02 04:17:48Z INFO Terminal] WRITE: [press Enter for Default] 
+[2026-02-02 04:17:48Z INFO Terminal] READ LINE
+[2026-02-02 04:17:51Z INFO Terminal] Read value: ''
+[2026-02-02 04:17:51Z INFO PromptManager] Falling back to the default: 'Default'
+[2026-02-02 04:17:51Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:17:51Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2026-02-02 04:17:51Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:17:51Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:17:51Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:17:51Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:17:51Z INFO PromptManager] ReadValue
+[2026-02-02 04:17:51Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:17:51Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:17:51Z INFO Terminal] READ LINE
+[2026-02-02 04:17:53Z INFO Terminal] Read value: ''
+[2026-02-02 04:17:53Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:17:53Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:17:53Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:17:53Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:17:53Z INFO PromptManager] ReadValue
+[2026-02-02 04:17:53Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:17:53Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:17:53Z INFO Terminal] READ LINE
+[2026-02-02 04:17:56Z INFO Terminal] Read value: ''
+[2026-02-02 04:17:57Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:18:54Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:18:56Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:18:56Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:18:57Z INFO PromptManager] ReadValue
+[2026-02-02 04:18:57Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:18:57Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:18:57Z INFO Terminal] READ LINE
+[2026-02-02 04:18:57Z INFO Terminal] Read value: ''
+[2026-02-02 04:18:57Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:18:57Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:18:57Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:18:57Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:18:57Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:18:57Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:18:57Z INFO PromptManager] ReadValue
+[2026-02-02 04:18:57Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:18:58Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:18:58Z INFO Terminal] READ LINE
+[2026-02-02 04:18:58Z INFO Terminal] Read value: ''
+[2026-02-02 04:18:58Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:18:58Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:18:58Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:18:58Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:18:58Z INFO PromptManager] ReadValue
+[2026-02-02 04:18:58Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:18:58Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:18:58Z INFO Terminal] READ LINE
+[2026-02-02 04:18:58Z INFO Terminal] Read value: ''
+[2026-02-02 04:18:58Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:01Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:01Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:19:01Z INFO Terminal] READ LINE
+[2026-02-02 04:19:01Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:01Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:19:01Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:01Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:19:01Z INFO Terminal] READ LINE
+[2026-02-02 04:19:01Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:01Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:19:01Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:01Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:19:01Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:01Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:19:01Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:19:01Z INFO Terminal] READ LINE
+[2026-02-02 04:19:01Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:01Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:03Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:03Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:03Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:19:03Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:19:03Z INFO Terminal] READ LINE
+[2026-02-02 04:19:03Z INFO Terminal] Read value: '		'
+[2026-02-02 04:19:03Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:19:03Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:19:03Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:03Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:03Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:19:03Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:19:03Z INFO Terminal] READ LINE
+[2026-02-02 04:19:03Z INFO Terminal] Read value: '	'
+[2026-02-02 04:19:03Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:19:03Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:04Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:19:04Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:04Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:04Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:19:04Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:19:04Z INFO Terminal] READ LINE
+[2026-02-02 04:19:04Z INFO Terminal] Read value: '	'
+[2026-02-02 04:19:04Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:06Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:06Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:19:06Z INFO Terminal] READ LINE
+[2026-02-02 04:19:06Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:06Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:19:06Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:06Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:19:06Z INFO Terminal] READ LINE
+[2026-02-02 04:19:06Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:06Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:19:06Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:06Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:19:06Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:06Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:19:06Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:19:06Z INFO Terminal] READ LINE
+[2026-02-02 04:19:06Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:06Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:08Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:08Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:19:08Z INFO Terminal] READ LINE
+[2026-02-02 04:19:08Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:08Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:19:08Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:08Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:19:08Z INFO Terminal] READ LINE
+[2026-02-02 04:19:08Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:08Z INFO PromptManager] Falling back to the default: 'sever'
+[2026-02-02 04:19:08Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:08Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:19:08Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:08Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:19:08Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:19:08Z INFO Terminal] READ LINE
+[2026-02-02 04:19:08Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:08Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:19:10Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'replace': 'False'
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:10Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:10Z INFO Terminal] WRITE: Would you like to replace the existing runner? (Y/N) 
+[2026-02-02 04:19:10Z INFO Terminal] WRITE: [press Enter for N] 
+[2026-02-02 04:19:10Z INFO Terminal] READ LINE
+[2026-02-02 04:19:10Z INFO Terminal] Read value: ''
+[2026-02-02 04:19:10Z INFO PromptManager] Falling back to the default: 'N'
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:19:10Z INFO CommandSettings] Arg 'name': ''
+[2026-02-02 04:19:10Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:19:10Z INFO PromptManager] ReadValue
+[2026-02-02 04:19:10Z INFO Terminal] WRITE: Enter the name of runner: 
+[2026-02-02 04:19:10Z INFO Terminal] WRITE: [press Enter for sever] 
+[2026-02-02 04:19:10Z INFO Terminal] READ LINE
+[2026-02-02 04:21:26Z INFO Terminal] Read value: 'y'
+[2026-02-02 04:21:26Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:21:26Z INFO CommandSettings] Arg 'labels': ''
+[2026-02-02 04:21:26Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:21:26Z INFO PromptManager] ReadValue
+[2026-02-02 04:21:26Z INFO Terminal] WRITE: This runner will have the following labels: 'self-hosted', 'Linux', 'X64' 
+Enter any additional labels (ex. label-1,label-2): 
+[2026-02-02 04:21:26Z INFO Terminal] WRITE: [press Enter to skip] 
+[2026-02-02 04:21:26Z INFO Terminal] READ LINE
+[2026-02-02 04:21:28Z INFO Terminal] Read value: ''
+[2026-02-02 04:21:28Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:21:29Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:21:29Z INFO CommandSettings] Flag 'no-default-labels': 'False'
+[2026-02-02 04:21:30Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-02-02 04:21:30Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-02-02 04:21:30Z INFO ConfigurationStore] Saving OAuth credential @ /home/ubuntu/devops-practice/.credentials
+[2026-02-02 04:21:30Z INFO ConfigurationStore] Credentials Saved.
+[2026-02-02 04:21:30Z INFO ConfigurationManager] Service enforced serverUrlV2: https://broker.actions.githubusercontent.com/
+[2026-02-02 04:21:30Z INFO ConfigurationManager] Service enforced useV2Flow: True
+[2026-02-02 04:21:30Z INFO CommandSettings] Arg 'work': ''
+[2026-02-02 04:21:30Z INFO CommandSettings] Flag 'unattended': 'False'
+[2026-02-02 04:21:30Z INFO PromptManager] ReadValue
+[2026-02-02 04:21:30Z INFO Terminal] WRITE: Enter name of work folder: 
+[2026-02-02 04:21:30Z INFO Terminal] WRITE: [press Enter for _work] 
+[2026-02-02 04:21:30Z INFO Terminal] READ LINE
+[2026-02-02 04:23:56Z INFO Terminal] Read value: ''
+[2026-02-02 04:23:56Z INFO PromptManager] Falling back to the default: '_work'
+[2026-02-02 04:23:56Z INFO ConfigurationStore] Saving runner settings.
+[2026-02-02 04:23:56Z INFO ConfigurationStore] Settings Saved.
+[2026-02-02 04:23:56Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:23:56Z INFO Terminal] WRITE LINE: 
+[2026-02-02 04:23:56Z INFO SystemDControlManager] Service name 'actions.runner.sangkhung1011-dotcom-devops-practice.y.service' display name 'GitHub Actions Runner (sangkhung1011-dotcom-devops-practice.y)' will be used for service configuration.
+[2026-02-02 04:23:56Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:23:56Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:23:56Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:23:56Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:23:56Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:23:56Z INFO UnixUtil] Which2: 'chmod'
+[2026-02-02 04:23:56Z INFO UnixUtil] Location: '/usr/bin/chmod'
+[2026-02-02 04:23:56Z INFO UnixUtil] Running /usr/bin/chmod 755 "/home/ubuntu/devops-practice/svc.sh"
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper] Starting process:
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/chmod'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Arguments: '755 "/home/ubuntu/devops-practice/svc.sh"'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Working directory: '/home/ubuntu/devops-practice'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper] Process started with process id 32792, waiting for process exit.
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:23:56Z INFO ProcessInvokerWrapper] Finished process 32792 with exit code 0, and elapsed time 00:00:00.0031641.
+[2026-02-02 04:23:56Z INFO Listener] Runner execution has finished with return code 0

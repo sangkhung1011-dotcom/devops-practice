@@ -1,0 +1,1444 @@
+[2026-02-02 04:51:35Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:51:35Z INFO Worker] Version: 2.331.0
+[2026-02-02 04:51:35Z INFO Worker] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-02 04:51:35Z INFO Worker] Culture: en-US
+[2026-02-02 04:51:35Z INFO Worker] UI Culture: en-US
+[2026-02-02 04:51:35Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-02-02 04:51:35Z INFO ProcessChannel] Receiving message of length 19151, with hash '2e527f36bbc9b74d376a9984930d4956a85205f274861e1e25c120e77e0deefc'
+[2026-02-02 04:51:35Z INFO Worker] Message received.
+[2026-02-02 04:51:35Z INFO Worker] Job message:
+ {
+  "environmentVariables": [
+    {
+      "type": 2,
+      "file": 1,
+      "line": 16,
+      "col": 3,
+      "map": [
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 16,
+            "col": 3,
+            "lit": "REGISTRY"
+          },
+          "value": {
+            "type": 0,
+            "file": 1,
+            "line": 16,
+            "col": 13,
+            "lit": "docker.io"
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 17,
+            "col": 3,
+            "lit": "IMAGE_NAME"
+          },
+          "value": {
+            "type": 0,
+            "file": 1,
+            "line": 17,
+            "col": 15,
+            "lit": "login-app"
+          }
+        }
+      ]
+    }
+  ],
+  "fileTable": [
+    ".github/workflows/ci-cd.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 163,
+        "col": 15,
+        "lit": "🚀 Pull & Run Container"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 164,
+              "col": 14,
+              "expr": "format('# 1. Login Docker (để pull image private nếu cần)\necho \"{0}\" | docker login -u \"{1}\" --password-stdin\n\n# 2. Pull image mới nhất\ndocker pull {2}/{3}:latest\n\n# 3. Stop & Remove container cũ\ndocker stop {4} || true\ndocker rm {5} || true\n\n# 4. Chạy container mới\ndocker run -d \\\n  --name {6} \\\n  --restart unless-stopped \\\n  -p 3000:3000 \\\n  {7}/{8}:latest\n  \n# 5. Dọn dẹp\ndocker image prune -f\n', secrets.DOCKER_PASSWORD, secrets.DOCKER_USERNAME, secrets.DOCKER_USERNAME, env.IMAGE_NAME, env.IMAGE_NAME, env.IMAGE_NAME, env.IMAGE_NAME, secrets.DOCKER_USERNAME, env.IMAGE_NAME)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "a5083a76-f1a0-42e9-afac-2137f211d707",
+      "name": "__run"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DOCKER_PASSWORD": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DOCKER_USERNAME": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "9e481fdc-3f60-4584-8f7e-f8ba33531f7c.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "9e481fdc-3f60-4584-8f7e-f8ba33531f7c",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "9e481fdc-3f60-4584-8f7e-f8ba33531f7c",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "a8f9dc5d-e77a-585d-b49d-f198632ef83d",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/Gk9iXAxsZivv0rFjvuJ1oPomzqh9gGPoX8hOLpQ5Y9oTzAXF9J/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/Gk9iXAxsZivv0rFjvuJ1oPomzqh9gGPoX8hOLpQ5Y9oTzAXF9J/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/37/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "97482e125d98ded26bad72fc83f4f268ff77800e"
+        },
+        {
+          "k": "repository",
+          "v": "sangkhung1011-dotcom/devops-practice"
+        },
+        {
+          "k": "repository_owner",
+          "v": "sangkhung1011-dotcom"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "257428963"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/sangkhung1011-dotcom/devops-practice.git"
+        },
+        {
+          "k": "run_id",
+          "v": "21577810638"
+        },
+        {
+          "k": "run_number",
+          "v": "6"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "257428963"
+        },
+        {
+          "k": "actor",
+          "v": "sangkhung1011-dotcom"
+        },
+        {
+          "k": "workflow",
+          "v": "🐳 Build & Push Docker Image"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "workflow_dispatch"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "inputs",
+                "v": null
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/sangkhung1011-dotcom/devops-practice.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2026-01-30T04:04:51Z"
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "Docker login app with CI/CD pipeline"
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "sangkhung1011-dotcom/devops-practice"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/sangkhung1011-dotcom/devops-practice.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/sangkhung1011-dotcom/devops-practice"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1145663964.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "HTML"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "devops-practice"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDORElx3A"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/257428963?v=4"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/sangkhung1011-dotcom"
+                          },
+                          {
+                            "k": "id",
+                            "v": 257428963.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "sangkhung1011-dotcom"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOD1gN4w"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/sangkhung1011-dotcom"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": "2026-02-02T03:19:28Z"
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 19.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:sangkhung1011-dotcom/devops-practice.git"
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/sangkhung1011-dotcom/devops-practice"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-02-02T03:19:32Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/sangkhung1011-dotcom/devops-practice"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/257428963?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/sangkhung1011-dotcom"
+                    },
+                    {
+                      "k": "id",
+                      "v": 257428963.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "sangkhung1011-dotcom"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOD1gN4w"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/sangkhung1011-dotcom"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "workflow",
+                "v": ".github/workflows/ci-cd.yml"
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "sangkhung1011-dotcom/devops-practice/.github/workflows/ci-cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "97482e125d98ded26bad72fc83f4f268ff77800e"
+        },
+        {
+          "k": "repository_id",
+          "v": "1145663964"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "sangkhung1011-dotcom"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 62168832563.0
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2,
+      "d": [
+        {
+          "k": "build-and-push",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "result",
+                "v": "success"
+              },
+              {
+                "k": "outputs",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "image-digest",
+                      "v": "sha256:060bb5794230fd5bf53e204716f810adac53603955c45702c2316b2767e78402"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOD1gN4w"
+}
+[2026-02-02 04:51:35Z INFO JobRunner] Job ID a8f9dc5d-e77a-585d-b49d-f198632ef83d
+[2026-02-02 04:51:35Z INFO ConfigurationStore] currentAssemblyLocation: /home/ubuntu/devops-practice/bin/Runner.Worker.dll
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] binPath: /home/ubuntu/devops-practice/bin
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] RootFolder: /home/ubuntu/devops-practice
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Runner': '/home/ubuntu/devops-practice/.runner'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] ConfigFilePath: /home/ubuntu/devops-practice/.runner
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'MigratedRunner': '/home/ubuntu/devops-practice/.runner_migrated'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] MigratedConfigFilePath: /home/ubuntu/devops-practice/.runner_migrated
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] CredFilePath: /home/ubuntu/devops-practice/.credentials
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ubuntu/devops-practice/.credentials_migrated'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] MigratedCredFilePath: /home/ubuntu/devops-practice/.credentials_migrated
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Service': '/home/ubuntu/devops-practice/.service'
+[2026-02-02 04:51:35Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ubuntu/devops-practice/.service
+[2026-02-02 04:51:35Z INFO ConfigurationStore] Read setting file: 395 chars
+[2026-02-02 04:51:35Z INFO JobRunner] Initializing launch client
+[2026-02-02 04:51:35Z INFO JobServerQueue] Initializing results client
+[2026-02-02 04:51:35Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-02-02 04:51:35Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-02-02 04:51:35Z INFO JobServerQueue] Start process web console line queue.
+[2026-02-02 04:51:35Z INFO JobServerQueue] Start process file upload queue.
+[2026-02-02 04:51:35Z INFO JobServerQueue] Start results file upload queue.
+[2026-02-02 04:51:35Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-02-02 04:51:35Z INFO JobServerQueue] Start process timeline update queue.
+[2026-02-02 04:51:35Z INFO ExecutionContext] Initializing Job context
+[2026-02-02 04:51:35Z INFO ExecutionContext] Initialize GitHub context
+[2026-02-02 04:51:35Z INFO ExecutionContext] Initialize Env context
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO JobRunner] Starting the job execution context.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO JobRunner] Validating directory permissions for: '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Tools': '/home/ubuntu/devops-practice/_work/_tool'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Temp': '/home/ubuntu/devops-practice/_work/_temp'
+[2026-02-02 04:51:35Z INFO JobRunner] Getting job extension.
+[2026-02-02 04:51:35Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'Credentials': '/home/ubuntu/devops-practice/.credentials'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known config file 'SetupInfo': '/home/ubuntu/devops-practice/.setup_info'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO PipelineDirectoryManager] Loading tracking config if exists: /home/ubuntu/devops-practice/_work/_PipelineMapping/sangkhung1011-dotcom/devops-practice/PipelineFolder.json
+[2026-02-02 04:51:35Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO JobExtension] Downloading actions
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Actions': '/home/ubuntu/devops-practice/_work/_actions'
+[2026-02-02 04:51:35Z INFO JobExtension] Adding .
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:35Z INFO JobExtension] Total accessible running process: 345.
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:35Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:35Z INFO JobExtension] Start checking server connectivity.
+[2026-02-02 04:51:35Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-02-02 04:51:35Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-02-02 04:51:35Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-02-02 04:51:35Z INFO JobExtension] Start checking service connectivity in background.
+[2026-02-02 04:51:35Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "5733bac8-b5fc-40ea-ab48-0d04b2c5828b",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-02-02T04:51:35.8916143Z",
+  "finishTime": "2026-02-02T04:51:35.9826056Z"
+}.
+[2026-02-02 04:51:35Z INFO JobRunner] Total job steps: 1.
+[2026-02-02 04:51:35Z INFO JobRunner] Run all job steps.
+[2026-02-02 04:51:35Z INFO StepsRunner] Processing step: DisplayName='🚀 Pull & Run Container'
+[2026-02-02 04:51:36Z INFO StepsRunner] Evaluating: success()
+[2026-02-02 04:51:36Z INFO StepsRunner] Result: true
+[2026-02-02 04:51:36Z INFO StepsRunner] Starting the step.
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Temp': '/home/ubuntu/devops-practice/_work/_temp'
+[2026-02-02 04:51:36Z INFO ExecutionContext] Write event payload to /home/ubuntu/devops-practice/_work/_temp/_github_workflow/event.json
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Temp': '/home/ubuntu/devops-practice/_work/_temp'
+[2026-02-02 04:51:36Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command error
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command group
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-02-02 04:51:36Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-02-02 04:51:36Z INFO ScriptHandler] Which2: 'bash'
+[2026-02-02 04:51:36Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:36Z INFO HostContext] Well known directory 'Temp': '/home/ubuntu/devops-practice/_work/_temp'
+[2026-02-02 04:51:36Z INFO ScriptHandler] Which2: 'bash'
+[2026-02-02 04:51:36Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper] Starting process:
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/bash'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Arguments: '-e /home/ubuntu/devops-practice/_work/_temp/52030a62-cfd3-4f36-b533-440c4c01f70e.sh'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Working directory: '/home/ubuntu/devops-practice/_work/devops-practice/devops-practice'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 40936.
+[2026-02-02 04:51:36Z INFO ProcessInvokerWrapper] Process started with process id 40936, waiting for process exit.
+[2026-02-02 04:51:36Z INFO Worker] Listening for cancel message from the channel.
+[2026-02-02 04:51:36Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /home/ubuntu/devops-practice/_diag/blocks/9e481fdc-3f60-4584-8f7e-f8ba33531f7c_5733bac8-b5fc-40ea-ab48-0d04b2c5828b.1
+[2026-02-02 04:51:37Z INFO ResultServer] Successfully started websocket client.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5733bac8-b5fc-40ea-ab48-0d04b2c5828b', success rate: 1/1.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-02-02 04:51:37Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-02-02 04:51:40Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-02-02 04:51:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:45Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:45Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:45Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:55Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:55Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:55Z INFO HostContext] Well known directory 'Work': '/home/ubuntu/devops-practice/_work'
+[2026-02-02 04:51:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:51:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-02 04:51:59Z INFO ProcessInvokerWrapper] Finished process 40936 with exit code 0, and elapsed time 00:00:23.4518991.
+[2026-02-02 04:51:59Z INFO CreateStepSummaryCommand] Step Summary file (/home/ubuntu/devops-practice/_work/_temp/_runner_file_commands/step_summary_0e12fd60-9cb7-486f-87b8-010ee9f51c56) is empty; skipping attachment upload
+[2026-02-02 04:51:59Z INFO StepsRunner] Step result: 
+[2026-02-02 04:51:59Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "a5083a76-f1a0-42e9-afac-2137f211d707",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 24,
+  "startTime": "2026-02-02T04:51:35.9916546Z",
+  "finishTime": "2026-02-02T04:51:59.5304852Z"
+}.
+[2026-02-02 04:51:59Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-02-02 04:51:59Z INFO StepsRunner] Current state: job state = ''
+[2026-02-02 04:51:59Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a5083a76-f1a0-42e9-afac-2137f211d707', success rate: 1/1.
+[2026-02-02 04:51:59Z INFO JobRunner] Finalize job.
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:51:59Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:51:59Z INFO JobExtension] Initialize Env context
+[2026-02-02 04:51:59Z INFO JobExtension] Initialize steps context
+[2026-02-02 04:51:59Z INFO JobExtension] Total accessible running process: 365.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 941 (kworker/u256:2-ext4-rsv-conversion)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/941/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/941/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 13097 (kworker/u258:0-flush-8:0)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/13097/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/13097/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 24008 (kworker/u257:3-flush-8:0)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/24008/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/24008/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 35209 (kworker/1:2-events)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/35209/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/35209/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 36189 (kworker/u257:1-flush-8:0)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/36189/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/36189/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 37485 (kworker/u257:4-writeback)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/37485/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/37485/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 38117 (kworker/1:1-rcu_par_gp)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/38117/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/38117/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 38509 (kworker/u258:1-events_unbound)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/38509/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/38509/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 40139 (kworker/u257:0-writeback)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/40139/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/40139/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 40261 (kworker/0:2-mpt_poll_0)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/40261/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/40261/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41032 (sleep)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41032/environ
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41092 (kworker/1:3-rcu_par_gp)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41092/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41092/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41095 (kworker/u256:1-ext4-rsv-conversion)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41095/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41095/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41105 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41105/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41105/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41117 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41117/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41117/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41136 (containerd-shim-runc-v2)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41136/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41136/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41158 (node)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41158/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41158/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41173 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41173/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41173/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41174 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41174/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41174/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41175 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41175/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41175/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41176 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41176/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41176/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41177 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41177/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41177/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41178 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41178/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41178/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41179 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41179/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41179/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41180 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41180/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41180/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41181 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41181/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41181/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41182 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41182/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41182/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41183 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41183/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41183/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41186 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41186/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41186/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41187 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41187/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41187/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41188 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41188/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41188/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41189 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41189/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41189/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41191 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41191/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41191/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41192 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41192/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41192/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41193 ((udev-worker))
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41193/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41193/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41198 (docker-proxy)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41198/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41198/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Inspecting process environment variables. PID: 41205 (docker-proxy)
+[2026-02-02 04:51:59Z INFO LinuxProcessExtensions] Read env from /proc/41205/environ
+[2026-02-02 04:51:59Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/41205/environ' is denied.
+[2026-02-02 04:51:59Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-02-02 04:51:59Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-02 04:51:59Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-02 04:51:59Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-02 04:51:59Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "76310437-3094-4dcb-a2f0-b3ba4b666bb9",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-02-02T04:51:59.5439241Z",
+  "finishTime": "2026-02-02T04:51:59.6458918Z"
+}.
+[2026-02-02 04:51:59Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-02-02 04:51:59Z INFO JobRunner] Completing the job execution context.
+[2026-02-02 04:51:59Z INFO JobRunner] Shutting down the job server queue.
+[2026-02-02 04:51:59Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-02-02 04:52:00Z INFO JobServerQueue] All queue process task stopped.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Try to append 1 batches web console lines for record '76310437-3094-4dcb-a2f0-b3ba4b666bb9', success rate: 1/1.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Web console line queue drained.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-02-02 04:52:00Z INFO JobServerQueue] File upload queue drained.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-02-02 04:52:00Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-02 04:52:00Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /home/ubuntu/devops-practice/_diag/blocks/9e481fdc-3f60-4584-8f7e-f8ba33531f7c_a5083a76-f1a0-42e9-afac-2137f211d707.1
+[2026-02-02 04:52:01Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-02 04:52:01Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, /home/ubuntu/devops-practice/_diag/blocks/9e481fdc-3f60-4584-8f7e-f8ba33531f7c_76310437-3094-4dcb-a2f0-b3ba4b666bb9.1
+[2026-02-02 04:52:03Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-02-02 04:52:03Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, /home/ubuntu/devops-practice/_diag/blocks/9e481fdc-3f60-4584-8f7e-f8ba33531f7c_a8f9dc5d-e77a-585d-b49d-f198632ef83d.1
+[2026-02-02 04:52:04Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2026-02-02 04:52:04Z INFO JobServerQueue] Results upload queue drained.
+[2026-02-02 04:52:05Z INFO JobServerQueue] Timeline update queue drained.
+[2026-02-02 04:52:05Z INFO JobServerQueue] Disposing job server ...
+[2026-02-02 04:52:05Z INFO JobServerQueue] Disposing results server ...
+[2026-02-02 04:52:05Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-02-02 04:52:05Z INFO TempDirectoryManager] Cleaning runner temp folder: /home/ubuntu/devops-practice/_work/_temp
+[2026-02-02 04:52:05Z INFO HostContext] Well known directory 'Bin': '/home/ubuntu/devops-practice/bin'
+[2026-02-02 04:52:05Z INFO HostContext] Well known directory 'Root': '/home/ubuntu/devops-practice'
+[2026-02-02 04:52:05Z INFO HostContext] Well known directory 'Diag': '/home/ubuntu/devops-practice/_diag'
+[2026-02-02 04:52:05Z INFO HostContext] Well known config file 'Telemetry': '/home/ubuntu/devops-practice/_diag/.telemetry'
+[2026-02-02 04:52:05Z INFO JobRunner] Raising job completed against run service
+[2026-02-02 04:52:06Z INFO Worker] Job completed.

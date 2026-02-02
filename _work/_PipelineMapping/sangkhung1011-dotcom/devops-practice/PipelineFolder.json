@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "sangkhung1011-dotcom/devops-practice",
+  "pipelineDirectory": "devops-practice",
+  "workspaceDirectory": "devops-practice/devops-practice",
+  "repositories": {
+    "sangkhung1011-dotcom/devops-practice": {
+      "repositoryPath": "devops-practice/devops-practice",
+      "lastRunOn": "02/02/2026 04:51:35 +00:00"
+    }
+  },
+  "lastRunOn": "02/02/2026 04:51:35 +00:00"
+}
