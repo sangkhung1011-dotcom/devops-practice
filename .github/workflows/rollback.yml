@@ -10,7 +10,7 @@ on:
 
 jobs:
   rollback:
-    runs-on: [self-hosted, linux]  # 👈 Sửa thành self-hosted
+    runs-on: [self-hosted, linux]  # 👈 Bắt buộc phải là self-hosted để chạy trên máy bạn
     
     steps:
       - name: 🚀 Rollback Version
