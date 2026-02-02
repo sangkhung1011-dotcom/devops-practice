@@ -155,31 +155,55 @@ jobs:
 
   # ========== DEPLOY TO SERVER (SELF-HOSTED) ==========
   deploy:
-    runs-on: [self-hosted, linux]  # 👈 Quan trọng: Chạy trên máy ảo của bạn
+    runs-on: [self-hosted, linux]
     needs: [build-and-push]
-    if: github.ref == 'refs/heads/main'
+    # Chạy khi push vào main HOẶC develop
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     
     steps:
+      - name: 🚀 Determine Environment
+        id: env-setup
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "ENV_NAME=prod" >> $GITHUB_ENV
+            echo "CONTAINER_NAME=login-app-prod" >> $GITHUB_ENV
+            echo "APP_PORT=3000" >> $GITHUB_ENV
+          else
+            echo "ENV_NAME=dev" >> $GITHUB_ENV
+            echo "CONTAINER_NAME=login-app-dev" >> $GITHUB_ENV
+            echo "APP_PORT=3001" >> $GITHUB_ENV
+          fi
+
       - name: 🚀 Pull & Run Container
         run: |
-          # 1. Login Docker (để pull image private nếu cần)
+          echo "Deploying to environment: ${{ env.ENV_NAME }}"
+          
+          # 1. Login Docker
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           
-          # 2. Pull image mới nhất
-          docker pull ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          # 2. Xử lý Tag (Main -> latest, Develop -> develop-latest)
+          # Lưu ý: docker-metadata ở trên đã tạo tag tương ứng rồi
+          if [ "${{ env.ENV_NAME }}" = "prod" ]; then
+            DOCKER_TAG="latest"
+          else
+            DOCKER_TAG="develop"  # Bạn cần đảm bảo metadata tạo tag này (mặc định branch name sẽ tạo tag)
+          fi
           
-          # 3. Stop & Remove container cũ
-          docker stop ${{ env.IMAGE_NAME }} || true
-          docker rm ${{ env.IMAGE_NAME }} || true
+          # 3. Pull image
+          docker pull ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:$DOCKER_TAG
           
-          # 4. Chạy container mới
+          # 4. Stop & Remove container cũ của môi trường này
+          docker stop ${{ env.CONTAINER_NAME }} || true
+          docker rm ${{ env.CONTAINER_NAME }} || true
+          
+          # 5. Chạy container mới
+          # Truyền thêm biến môi trường NODE_ENV
           docker run -d \
-            --name ${{ env.IMAGE_NAME }} \
+            --name ${{ env.CONTAINER_NAME }} \
             --restart unless-stopped \
-            -p 3000:3000 \
-            ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+            -p ${{ env.APP_PORT }}:3000 \
+            -e NODE_ENV=${{ env.ENV_NAME }} \
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:$DOCKER_TAG
             
-          # 5. Dọn dẹp
+          # 6. Dọn dẹp
           docker image prune -f
-
-
